@@ -2,8 +2,7 @@ import React from 'react';
 
 function Footer() {
   return (
-    <div>
-      {/* GitHub repository link */}
+    <div className="footer">
       <a
         href="https://github.com/karkelo1/e-commerce-admin.git"
         target="_blank"
