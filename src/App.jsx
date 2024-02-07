@@ -1,17 +1,29 @@
 import React from 'react';
 import './App.css';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Navbar from './Home Page/Navbar';
 import Footer from './Home Page/Footer';
 import Sidebar from './Home Page/Sidebar';
-import List from './Home Page/List';
+import DashboardPage from './Home Page/DashboardPage';
+import ItemDetailsPage from './Home Page/ItemDetailsPage';
+import AboutPage from './Home Page/AboutPage';
+import NotFoundPage from './Home Page/NotFoundPage';
+
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Sidebar />
-      <List /> 
-      <Footer />
-    </div>
+    <Router>
+      <div>
+        <Navbar />
+        <Sidebar />
+        <Switch>
+          <Route path="/" exact component={DashboardPage} />
+          <Route path="/item/:id" component={ItemDetailsPage} />
+          <Route path="/about" component={AboutPage} />
+          <Route component={NotFoundPage} />
+        </Switch>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

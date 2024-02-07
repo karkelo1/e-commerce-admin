@@ -1,8 +1,7 @@
 import React from 'react';
-
 function Navbar() {
   return (
-    <nav>
+    <nav className="navbar">
       <div>
         <img src="./public/Mornnie.png" alt="logo" />
       </div>
