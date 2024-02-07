@@ -7,14 +7,10 @@ const List = ({ data }) => {
     return <div>No data available</div>;
   }
 
-  const handleDelete = (id) => {
-    // Implement delete functionality
-  };
-
   return (
     <ul>
-      {data.map(item => (
-        <ListItem key={item.id} item={item} onDelete={() => handleDelete(item.id)} />
+      {data.map(product => (
+        <ListItem key={product.id} product={product} />
       ))}
     </ul>
   );

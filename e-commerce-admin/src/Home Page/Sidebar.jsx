@@ -1,9 +1,8 @@
 import React from 'react';
 
-
 function Sidebar() {
   return (
-    <aside>
+    <aside className="sidebar">
       <div>
         <a href="Home">Home</a>
         <a href="About">About</a>
