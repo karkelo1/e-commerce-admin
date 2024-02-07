@@ -1,9 +1,12 @@
 import React from 'react';
+import List from './List';
 
 function DashboardPage() {
   return (
     <div>
-      <h1>Welcome to the Dashboard!</h1>
+      
+      <h1>Hot Deals!</h1>
+      <List />
     </div>
   );
 }

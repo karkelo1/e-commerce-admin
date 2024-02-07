@@ -1,33 +1,30 @@
-import React from 'react';
 import './App.css';
-import Navbar from './Home Page/Navbar';
-import Footer from './Home Page/Footer';
-import Sidebar from './Home Page/Sidebar';
-import DashboardPage from "./Home Page/Dashboard Page";
-import ItemDetailsPage from "./Home Page/Item Details Page";
-import AboutPage from "./Home Page/About Page";
-import NotFoundPage from "./Home Page/Not Found Page";
-import { Route, Routes } from "react-router-dom";
-import List from './Home Page/List';
+import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import Navbar from './homepage/Navbar';
+import Footer from './homepage/Footer';
+import Sidebar from './homepage/Sidebar';
+import DashboardPage from './homepage/DashboardPage';
+import ItemDetailsPage from './homepage/ItemDetailsPage';
+import AboutPage from './homepage/AboutPage';
+import NotFoundPage from './homepage/NotFoundPage';
+
 function App() {
   return (
-    <>
-
-        <Navbar />
+    <div className="container">
+      <Navbar />
+      <div className="content">
         <Sidebar />
         <Routes>
-        <Route path="/" exact component={DashboardPage} />
-        <Route path="/item/:id" component={ItemDetailsPage} />
-        <Route path="/about" component={AboutPage} />
-        <Route component={NotFoundPage} />
+          <Route path="/" element={<DashboardPage />} />
+          <Route path="/item/:id" element={<ItemDetailsPage />} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
-        <List />
-        <Footer />
-    </>
-
+      </div>
+      <Footer />
+    </div>
   );
 }
 
 export default App;
-
-
