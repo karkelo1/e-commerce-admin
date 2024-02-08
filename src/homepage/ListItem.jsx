@@ -18,19 +18,15 @@ const ListItem = ({ product, onDelete }) => {
   return (
     <li>
       <div>
-        {/* Render product information */}
+      <img src={product.images[0]} alt="Product Thumbnail" />
         <p>Title: {product.title}</p>
         <p>Description: {product.description}</p>
-        <p>Price: ${product.price}</p>
-        <p>Rating: {product.rating}</p>
-        <p>Stock: {product.stock}</p>
-        <p>Brand: {product.brand}</p>
-        <p>Category: {product.category}</p>
-        {/* Conditional rendering */}
+        <p> ${product.price}</p>
+       
         <p>Is available: {renderCheckMark(product.stock > 0)}</p>
         <p>{renderConditionalContent(product.price)}</p>
-        {/* Render the first image */}
-        <img src={product.images[0]} alt="Product Thumbnail" />
+     
+       
       </div>
       <button onClick={handleDelete}>Delete</button>
     </li>
