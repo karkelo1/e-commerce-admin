@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+
 const ListItem = ({ product, onDelete }) => {
   const handleDelete = () => {
     // Call onDelete with the product id to handle deletion
@@ -18,18 +18,17 @@ const ListItem = ({ product, onDelete }) => {
   return (
     <li>
       <div>
-        <img
-          src={product.images[0]}
-          alt="Product Thumbnail"
-          style={{ maxWidth: '180px', maxHeight: '180px' }} // Set max width and height
-        />
+      <img src={product.images[0]} alt="Product Thumbnail" />
         <p>Title: {product.title}</p>
+        <p>Description: {product.description}</p>
         <p> ${product.price}</p>
-        <button onClick={handleDelete}>Delete</button>
-        <Link to={`/item/${product.id}`}>
-          <button>View Details</button> {/* Button to view item details */}
-        </Link>
+       
+        <p>Is available: {renderCheckMark(product.stock > 0)}</p>
+        <p>{renderConditionalContent(product.price)}</p>
+     
+       
       </div>
+      <button onClick={handleDelete}>Delete</button>
     </li>
   );
 };
