@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useParams } from 'react-router-dom';
 import dataJson from '../data/products.json';
@@ -9,16 +8,20 @@ const ItemDetailsPage = () => {
 
   return (
     <div>
-      
       {item && (
-        <div>
+        <div className='item-details'>
           <h2>{item.title}</h2>
           <p>Description: {item.description}</p>
           <p> ${item.price}</p>
         
-          <div>
+          <div className="image-container">
             {item.images.map((image, index) => (
-              <img key={index} src={image} alt={`Image ${index + 1}`} />
+              <div className="image-wrapper" key={index}>
+                <div className="image-overlay">
+                  <p>Click to view details</p>
+                </div>
+                <img className='img-details' src={image} alt={`Image ${index + 1}`} />
+              </div>
             ))}
           </div>
         </div>

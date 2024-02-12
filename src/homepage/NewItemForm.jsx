@@ -23,12 +23,9 @@ const NewItemForm = ({ onAddItem }) => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Validation can be added here if needed
-
-    // Pass the new item to the parent component
+  
     onAddItem(newItem);
 
-    // Reset the form after submission
     setNewItem({
       title: '',
      
@@ -37,12 +34,13 @@ const NewItemForm = ({ onAddItem }) => {
 
   return (
     <form onSubmit={handleSubmit}>
-      <label>
-        Title:
+      <label className='add-items-button'>
+       
         <input type="text" name="title" value={newItem.title} onChange={handleChange} required />
       </label>
-      {/* Add similar input fields for other properties */}
-      <button type="submit">Add Item</button>
+   
+      <button className='btn'
+      type="submit">Add Item</button>
     </form>
   );
 };

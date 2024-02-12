@@ -10,8 +10,9 @@ function DashboardPage() {
   };
 
   return (
-    <div>
-      <h1>Hot Deals!</h1>
+    
+    <div  >
+      
       <NewItemForm onAddItem={handleAddItem} />
       <List items={items} />
     </div>

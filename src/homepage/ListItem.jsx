@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const ListItem = ({ product, onDelete }) => {
   const handleDelete = () => {
@@ -12,25 +13,28 @@ const ListItem = ({ product, onDelete }) => {
   };
 
   const renderConditionalContent = (value) => {
-    return value > 100 ? 'This product is expensive' : 'This product is affordable';
+    return value > 100 ? ' expensive' : ' affordable';
   };
 
   return (
-    <li>
-      <div>
+    <div className="products">
       <img src={product.images[0]} alt="Product Thumbnail" />
-        <p>Title: {product.title}</p>
-        <p>Description: {product.description}</p>
-        <p> ${product.price}</p>
-       
-        <p>Is available: {renderCheckMark(product.stock > 0)}</p>
-        <p>{renderConditionalContent(product.price)}</p>
-     
-       
+      <div className="product-details">
+        <p><strong>{product.title}</strong></p>
+        <p><span></span> {product.description}</p>
+        <p><span>Price:</span> ${product.price}</p>
+        <p><span>In stock:</span> {renderCheckMark(product.stock > 0)}</p>
+        <p><span>Price evaluation:</span> {renderConditionalContent(product.price)}</p>
       </div>
-      <button onClick={handleDelete}>Delete</button>
-    </li>
+      <div className="actions">
+        <button className='btn' onClick={handleDelete}>Delete</button>
+        <Link to={`/item/${product.id}`}>
+          <button className='btn'>Details</button>
+        </Link>
+      </div>
+    </div>
   );
 };
 
 export default ListItem;
+
