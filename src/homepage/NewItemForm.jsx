@@ -1,4 +1,3 @@
-// NewItemForm.js
 import React, { useState } from 'react';
 
 const NewItemForm = ({ onAddItem }) => {
@@ -24,23 +23,30 @@ const NewItemForm = ({ onAddItem }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
   
+    // Pass the newItem state to the parent component
     onAddItem(newItem);
 
+    // Reset all fields after submission
     setNewItem({
       title: '',
-     
+      description: '',
+      price: 0,
+      rating: 0,
+      stock: 0,
+      brand: '',
+      category: '',
+      images: [],
     });
   };
 
   return (
     <form onSubmit={handleSubmit}>
-      <label className='add-items-button'>
-       
+      <label>
+        Title:
         <input type="text" name="title" value={newItem.title} onChange={handleChange} required />
       </label>
-   
-      <button className='btn'
-      type="submit">Add Item</button>
+      {/* Add other input fields for description, price, rating, etc. */}
+      <button className='btn' type="submit">Add Item</button>
     </form>
   );
 };

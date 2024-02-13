@@ -74,6 +74,7 @@ a:hover {
   align-items: center;
   border: 1px solid #ccc;
   border-radius: 5px;
+
   padding: 10px;
   margin-bottom: 10px;
 }
@@ -194,4 +195,54 @@ a:hover {
 
 .details-container {
   flex: 1; /* Take remaining space */
+}
+.about-container {
+  font-family: Arial, sans-serif;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.about-heading {
+  color: #4CAF50;
+  border-bottom: 2px solid #4CAF50;
+  padding-bottom: 10px;
+}
+
+.about-description {
+  color: #333;
+  font-size: 18px;
+}
+
+.team-container {
+  background-color: #E8F5E9;
+  padding: 10px;
+  border-radius: 5px;
+  margin-top: 20px;
+}
+
+.team-label {
+  font-weight: bold;
+  color: #4CAF50;
+  margin-bottom: 10px;
+}
+
+.team-list {
+  list-style: none;
+  padding: 0;
+}
+
+.team-member-label {
+  color: #000;
+  margin-right: 5px;
+  font-weight: bold; /* Make team member label bold */
+}
+
+.github-link {
+  color: #4CAF50; /* Set link color to green */
+  text-decoration: none;
+}
+
+.github-link:hover {
+  color: #388E3C; /* Change link color on hover to dark green */
 }
